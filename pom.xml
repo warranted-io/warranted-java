@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+     http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.warranted</groupId>
+  <artifactId>warranted-java</artifactId>
+  <version>1.0.0</version>
+  <description>A Warranted helper library</description>
+  <name>warranted-java</name>
+
+  <url>https://github.com/warranted-io/warranted-java#readme</url>
+  <inceptionYear>2024</inceptionYear>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>api-team</id>
+      <name>API Team</name>
+      <email>api@warranted.io</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/warranted-io/warranted-java.git</connection>
+    <url>https://github.com/warranted-io/warranted-java.git</url>
+  </scm>
+
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/warranted-io/warranted-java/issues</url>
+  </issueManagement>
+
+</project>
