@@ -30,8 +30,7 @@ public class Client {
      * @return whether or not the signature matches
      */
     public boolean validateRequest(String signature, String url, String body) {
-        CryptoHelper cryptoHelper = new CryptoHelper();
-        String hmac = cryptoHelper.createHMAC(url, body, this.authToken);
-        return cryptoHelper.timeSafeCompare(signature, hmac);
+        String hmac = CryptoHelper.createHMAC(url, body, this.authToken);
+        return CryptoHelper.timeSafeCompare(signature, hmac);
     }
 }
