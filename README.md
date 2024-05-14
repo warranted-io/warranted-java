@@ -41,8 +41,5 @@ public class Example {
 }
 ```
 
-> [!WARNING]
-> It's okay to hardcode your credentials when testing locally, but you should use environment variables to keep them secret before committing any code or deploying to production.
-
 ## Usage
 Check out [our docs](https://app.warranted.io/docs) for more details.
