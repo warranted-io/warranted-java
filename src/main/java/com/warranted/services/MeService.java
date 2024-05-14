@@ -49,12 +49,7 @@ public class MeService {
       HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
       if (response.statusCode() != HttpURLConnection.HTTP_OK) {
-        try {
-          Error error = gson.fromJson(response.body(), Error.class);
-          throw new IOException("Error fetching me: " + response.statusCode() + " Error: " + error.toString());
-        } catch (JsonSyntaxException e) {
-          throw new IOException("Error fetching me: " + response.statusCode());
-        }
+        throw new IOException("Error fetching me: " + response.statusCode());
       }
   
       String responseBody = response.body();
