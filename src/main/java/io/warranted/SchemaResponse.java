@@ -1,4 +1,4 @@
-package com.warranted;
+package io.warranted;
 
 public class SchemaResponse {
     private Schema schema;

@@ -1,4 +1,4 @@
-package com.warranted.services;
+package io.warranted.services;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -10,10 +10,10 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import com.warranted.Error;
-import com.warranted.RequestParams;
-import com.warranted.Schema;
-import com.warranted.SchemaResponse;
+import io.warranted.Error;
+import io.warranted.RequestParams;
+import io.warranted.Schema;
+import io.warranted.SchemaResponse;
 
 public class SchemaService {
     private RequestParams params;

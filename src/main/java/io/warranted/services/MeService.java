@@ -1,4 +1,4 @@
-package com.warranted.services;
+package io.warranted.services;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -9,8 +9,8 @@ import java.net.http.HttpResponse;
 import java.util.Map;
 
 import com.google.gson.Gson;
-import com.warranted.Me;
-import com.warranted.RequestParams;
+import io.warranted.Me;
+import io.warranted.RequestParams;
 
 public class MeService {
     private RequestParams params;

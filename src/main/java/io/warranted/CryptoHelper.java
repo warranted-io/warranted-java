@@ -1,4 +1,4 @@
-package com.warranted;
+package io.warranted;
 
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;

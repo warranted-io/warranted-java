@@ -1,4 +1,4 @@
-package com.warranted;
+package io.warranted;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;

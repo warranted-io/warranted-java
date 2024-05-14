@@ -1,4 +1,4 @@
-package com.warranted;
+package io.warranted;
 
 public class LawEnforcementRequestResponse {
     private LawEnforcementRequest lawEnforcementRequest;

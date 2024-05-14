@@ -1,13 +1,13 @@
-package com.warranted;
+package io.warranted;
 
 import java.lang.IllegalArgumentException;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.warranted.services.DecisionService;
-import com.warranted.services.LawEnforcementRequestService;
-import com.warranted.services.MeService;
-import com.warranted.services.SchemaService;
+import io.warranted.services.DecisionService;
+import io.warranted.services.LawEnforcementRequestService;
+import io.warranted.services.MeService;
+import io.warranted.services.SchemaService;
 
 public class Client {
     private final RequestParams params;

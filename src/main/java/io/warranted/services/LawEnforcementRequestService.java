@@ -1,4 +1,4 @@
-package com.warranted.services;
+package io.warranted.services;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,12 +14,12 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import com.warranted.Error;
-import com.warranted.LawEnforcementRequest;
-import com.warranted.LawEnforcementRequest.DeleteResponse;
-import com.warranted.LawEnforcementRequestResponse;
-import com.warranted.LawEnforcementRequestsResponse;
-import com.warranted.RequestParams;
+import io.warranted.Error;
+import io.warranted.LawEnforcementRequest;
+import io.warranted.LawEnforcementRequest.DeleteResponse;
+import io.warranted.LawEnforcementRequestResponse;
+import io.warranted.LawEnforcementRequestsResponse;
+import io.warranted.RequestParams;
 
 public class LawEnforcementRequestService {
     private RequestParams params;

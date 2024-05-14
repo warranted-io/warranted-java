@@ -1,4 +1,4 @@
-package com.warranted;
+package io.warranted;
 
 public class Me {
     private String id;

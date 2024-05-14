@@ -1,4 +1,4 @@
-package com.warranted;
+package io.warranted;
 
 public class Error {
     private String errorCode;

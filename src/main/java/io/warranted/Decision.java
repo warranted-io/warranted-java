@@ -1,4 +1,4 @@
-package com.warranted;
+package io.warranted;
 
 import java.util.Map;
 
