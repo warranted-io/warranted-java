@@ -1,10 +1,20 @@
 package com.warranted;
 
 import java.lang.IllegalArgumentException;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.warranted.services.DecisionService;
+import com.warranted.services.LawEnforcementRequestService;
+import com.warranted.services.MeService;
+import com.warranted.services.SchemaService;
 
 public class Client {
-    private final String accountId;
-    private final String authToken;
+    private final RequestParams params;
+    public final DecisionService decisions;
+    public final LawEnforcementRequestService lawEnforcementRequest;
+    public final MeService me;
+    public final SchemaService schema;
 
     /**
      * Warranted Client Constructor
@@ -18,8 +28,27 @@ public class Client {
         if (authToken == null || authToken.isEmpty()) {
             throw new IllegalArgumentException("No authToken provided");
         }
-        this.accountId = accountId;
-        this.authToken = authToken;
+        this.params = new RequestParams(accountId, authToken, "https://app.warranted.io", new HashMap<String, String>());
+        this.decisions = new DecisionService(this.params);
+        this.lawEnforcementRequest = new LawEnforcementRequestService(this.params);
+        this.me = new MeService(this.params);
+        this.schema = new SchemaService(this.params);
+    }
+
+    /**
+     * Set host
+     * @param host the host to send requests to
+     */
+    public void setHost(String host) {
+        this.params.setHost(host);
+    }
+
+    /**
+     * Set headers
+     * @param headers headers to be sent with a request
+     */
+    public void setHeaders(Map<String, String> headers) {
+        this.params.setHeaders(headers);
     }
 
     /**
@@ -30,7 +59,7 @@ public class Client {
      * @return whether or not the signature matches
      */
     public boolean validateRequest(String signature, String url, String body) {
-        String hmac = CryptoHelper.createHMAC(url, body, this.authToken);
+        String hmac = CryptoHelper.createHMAC(url, body, this.params.getAuthToken());
         return CryptoHelper.timeSafeCompare(signature, hmac);
     }
 }

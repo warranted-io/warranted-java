@@ -39,4 +39,12 @@
     <url>https://github.com/warranted-io/warranted-java/issues</url>
   </issueManagement>
 
+  <dependencies>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.10.1</version>
+    </dependency>
+  </dependencies>
+
 </project>
