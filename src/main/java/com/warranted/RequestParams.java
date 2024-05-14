@@ -9,6 +9,7 @@ public class RequestParams {
     private String authToken;
     private String host;
     private Map<String, String> headers;
+    private static String version = "1.0.0";
 
     public RequestParams(String accountId, String authToken, String host, Map<String, String> headers) {
         this.accountId = accountId;
@@ -50,8 +51,16 @@ public class RequestParams {
     }
 
     public String getEncodedCredentials() throws UnsupportedEncodingException {
-      String credentials = accountId + ":" + authToken;
-      final byte[] bytes = credentials.getBytes("UTF-8");
-      return new String(Base64.getEncoder().encode(bytes));
+        String credentials = accountId + ":" + authToken;
+        final byte[] bytes = credentials.getBytes("UTF-8");
+        return new String(Base64.getEncoder().encode(bytes));
+    }
+
+    public String getUserAgentHeader() {
+        String os = System.getProperty("os.name");
+        String architecture = System.getProperty("os.arch");
+        String javaVersion = System.getProperty("java.version");
+
+        return String.format("warranted-java/%s (%s %s) java/%s", version, os, architecture, javaVersion);
     }
 }

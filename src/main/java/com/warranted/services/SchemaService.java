@@ -34,6 +34,7 @@ public class SchemaService {
       HttpClient client = HttpClient.newHttpClient();
       HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
                     .uri(uriObject)
+                    .header("User-Agent", this.params.getUserAgentHeader())
                     .header("Authorization", "Basic " + this.params.getEncodedCredentials())
                     .GET();
 
@@ -77,6 +78,7 @@ public class SchemaService {
       String jsonBody = gson.toJson(schema);
       HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
                     .uri(uriObject)
+                    .header("User-Agent", this.params.getUserAgentHeader())
                     .header("Content-Type", "application/json")
                     .header("Authorization", "Basic " + this.params.getEncodedCredentials())
                     .PUT(HttpRequest.BodyPublishers.ofString(jsonBody));

@@ -31,6 +31,7 @@ public class MeService {
       HttpClient client = HttpClient.newHttpClient();
       HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
                     .uri(uriObject)
+                    .header("User-Agent", this.params.getUserAgentHeader())
                     .header("Authorization", "Basic " + this.params.getEncodedCredentials())
                     .GET();
 

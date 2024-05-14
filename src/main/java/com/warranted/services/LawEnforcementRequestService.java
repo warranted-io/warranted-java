@@ -64,6 +64,7 @@ public class LawEnforcementRequestService {
       HttpClient client = HttpClient.newHttpClient();
       HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
                     .uri(uriObject)
+                    .header("User-Agent", this.params.getUserAgentHeader())
                     .header("Authorization", "Basic " + this.params.getEncodedCredentials())
                     .GET();
 
@@ -106,6 +107,7 @@ public class LawEnforcementRequestService {
       HttpClient client = HttpClient.newHttpClient();
       HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
                     .uri(uriObject)
+                    .header("User-Agent", this.params.getUserAgentHeader())
                     .header("Authorization", "Basic " + this.params.getEncodedCredentials())
                     .GET();
 
@@ -142,6 +144,7 @@ public class LawEnforcementRequestService {
       HttpClient client = HttpClient.newHttpClient();
       HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
                     .uri(uriObject)
+                    .header("User-Agent", this.params.getUserAgentHeader())
                     .header("Content-Type", "multipart/form-data")
                     .header("Authorization", "Basic " + this.params.getEncodedCredentials())
                     .POST(HttpRequest.BodyPublishers.ofFile(file.toPath()));
@@ -187,6 +190,7 @@ public class LawEnforcementRequestService {
       String jsonBody = gson.toJson(lawEnforcementRequest);
       HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
                     .uri(uriObject)
+                    .header("User-Agent", this.params.getUserAgentHeader())
                     .header("Content-Type", "application/json")
                     .header("Authorization", "Basic " + this.params.getEncodedCredentials())
                     .PUT(HttpRequest.BodyPublishers.ofString(jsonBody));
@@ -230,6 +234,7 @@ public class LawEnforcementRequestService {
       HttpClient client = HttpClient.newHttpClient();
       HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
                     .uri(uriObject)
+                    .header("User-Agent", this.params.getUserAgentHeader())
                     .header("Authorization", "Basic " + this.params.getEncodedCredentials())
                     .DELETE();
 
