@@ -8,7 +8,7 @@ Use the following dependency in your project to grab via Maven:
 
 ```xml
 <dependency>
-  <groupId>com.warranted.sdk</groupId>
+  <groupId>io.warranted.sdk</groupId>
   <artifactId>warranted</artifactId>
   <version>1.X.X</version>
   <scope>compile</scope>
@@ -18,14 +18,14 @@ Use the following dependency in your project to grab via Maven:
 or Gradle:
 
 ```
-implementation "com.warranted.sdk:warranted:1.X.X"
+implementation "io.warranted.sdk:warranted:1.X.X"
 ```
 
 ### Test your installation
 To make sure the installation was successful, try hitting the `/api/v1/me` API, like this:
 ```java
-import com.warranted.Client;
-import com.warranted.Me;
+import io.warranted.Client;
+import io.warranted.Me;
 
 public class Example {
   public static void main(String[] args) {
