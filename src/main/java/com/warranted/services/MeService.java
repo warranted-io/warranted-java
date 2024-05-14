@@ -9,8 +9,6 @@ import java.net.http.HttpResponse;
 import java.util.Map;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
-import com.warranted.Error;
 import com.warranted.Me;
 import com.warranted.RequestParams;
 
