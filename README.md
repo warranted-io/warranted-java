@@ -8,7 +8,7 @@ Use the following dependency in your project to grab via Maven:
 
 ```xml
 <dependency>
-  <groupId>io.warranted.sdk</groupId>
+  <groupId>io.warranted</groupId>
   <artifactId>warranted</artifactId>
   <version>1.X.X</version>
   <scope>compile</scope>
@@ -18,7 +18,7 @@ Use the following dependency in your project to grab via Maven:
 or Gradle:
 
 ```
-implementation "io.warranted.sdk:warranted:1.X.X"
+implementation "io.warranted:warranted:1.X.X"
 ```
 
 ### Test your installation
