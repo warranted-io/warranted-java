@@ -15,19 +15,31 @@ import io.warranted.DecisionResponse;
 import io.warranted.Error;
 import io.warranted.RequestParams;
 
+/**
+ * <p>DecisionService class.</p>
+ *
+ * @author warranted.io
+ * @version $Id: $Id
+ */
 public class DecisionService {
     private RequestParams params;
     private static Gson gson = new Gson();
 
+    /**
+     * <p>Constructor for DecisionService.</p>
+     *
+     * @param params a {@link io.warranted.RequestParams} object
+     */
     public DecisionService(RequestParams params) {
       this.params = params;
     }
 
     /**
      * Get a decision
+     *
      * @param decisionId the id of the decision
      * @return the corresponding decision object
-     * @throws Exception
+     * @throws java.lang.Exception
      */
     public Decision get(String decisionId) throws Exception {
       if (decisionId == null || !decisionId.startsWith("decision-")) {

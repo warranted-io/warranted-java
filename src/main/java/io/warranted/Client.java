@@ -9,6 +9,12 @@ import io.warranted.services.LawEnforcementRequestService;
 import io.warranted.services.MeService;
 import io.warranted.services.SchemaService;
 
+/**
+ * <p>Client class.</p>
+ *
+ * @author warranted.io
+ * @version $Id: $Id
+ */
 public class Client {
     private final RequestParams params;
     public final DecisionService decisions;
@@ -18,6 +24,7 @@ public class Client {
 
     /**
      * Warranted Client Constructor
+     *
      * @param accountId the account id
      * @param authToken the primary auth token
      */
@@ -37,6 +44,7 @@ public class Client {
 
     /**
      * Set host
+     *
      * @param host the host to send requests to
      */
     public void setHost(String host) {
@@ -45,6 +53,7 @@ public class Client {
 
     /**
      * Set headers
+     *
      * @param headers headers to be sent with a request
      */
     public void setHeaders(Map<String, String> headers) {
@@ -53,10 +62,11 @@ public class Client {
 
     /**
      * Validate the signature of a request
+     *
      * @param signature the signature from the X-Warranted-Signature to compare against
      * @param url the url that received the request
-     * @param jsonData JSON request data
      * @return whether or not the signature matches
+     * @param body a {@link java.lang.String} object
      */
     public boolean validateRequest(String signature, String url, String body) {
         String hmac = CryptoHelper.createHMAC(url, body, this.params.getAuthToken());

@@ -8,10 +8,17 @@ import java.security.NoSuchAlgorithmException;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
+/**
+ * <p>CryptoHelper class.</p>
+ *
+ * @author warranted.io
+ * @version $Id: $Id
+ */
 public class CryptoHelper {
 
     /**
      * Function does a time-safe comparison
+     *
      * @param a the first string
      * @param b the second string
      * @return true if they're equal, else false.
@@ -26,6 +33,7 @@ public class CryptoHelper {
 
     /**
      * Function to create HMAC of a JSON request
+     *
      * @param url the destination URL
      * @param jsonData JSON request data
      * @param secretKey Secret key for HMAC
@@ -37,6 +45,7 @@ public class CryptoHelper {
 
     /**
      * Function to create HMAC of a JSON request
+     *
      * @param url the destination URL
      * @param jsonData JSON request data
      * @param secretKey Secret key for HMAC

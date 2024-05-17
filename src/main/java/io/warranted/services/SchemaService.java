@@ -15,18 +15,30 @@ import io.warranted.RequestParams;
 import io.warranted.Schema;
 import io.warranted.SchemaResponse;
 
+/**
+ * <p>SchemaService class.</p>
+ *
+ * @author warranted.io
+ * @version $Id: $Id
+ */
 public class SchemaService {
     private RequestParams params;
     private static Gson gson = new Gson();
 
+    /**
+     * <p>Constructor for SchemaService.</p>
+     *
+     * @param params a {@link io.warranted.RequestParams} object
+     */
     public SchemaService(RequestParams params) {
       this.params = params;
     }
 
     /**
      * Get the schema
+     *
      * @return the schema
-     * @throws Exception
+     * @throws java.lang.Exception
      */
     public Schema get() throws Exception {
       String url = String.format("%s/api/v1/schema", this.params.getHost());
@@ -67,9 +79,10 @@ public class SchemaService {
 
     /**
      * Update the schema
+     *
      * @param schema the schema object to update
      * @return the updated Schema
-     * @throws Exception
+     * @throws java.lang.Exception
      */
     public Schema update(Schema schema) throws Exception {
       String url = String.format("%s/api/v1/schema", this.params.getHost());

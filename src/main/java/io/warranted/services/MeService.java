@@ -12,18 +12,30 @@ import com.google.gson.Gson;
 import io.warranted.Me;
 import io.warranted.RequestParams;
 
+/**
+ * <p>MeService class.</p>
+ *
+ * @author warranted.io
+ * @version $Id: $Id
+ */
 public class MeService {
     private RequestParams params;
     private static Gson gson = new Gson();
 
+    /**
+     * <p>Constructor for MeService.</p>
+     *
+     * @param params a {@link io.warranted.RequestParams} object
+     */
     public MeService(RequestParams params) {
       this.params = params;
     }
 
     /**
      * Get info about the active user
+     *
      * @return an object with info about the active user
-     * @throws Exception
+     * @throws java.lang.Exception
      */
     public Me get() throws Exception {
       String url = String.format("%s/api/v1/me", this.params.getHost());

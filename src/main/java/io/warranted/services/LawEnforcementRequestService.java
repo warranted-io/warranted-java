@@ -21,18 +21,30 @@ import io.warranted.LawEnforcementRequestResponse;
 import io.warranted.LawEnforcementRequestsResponse;
 import io.warranted.RequestParams;
 
+/**
+ * <p>LawEnforcementRequestService class.</p>
+ *
+ * @author warranted.io
+ * @version $Id: $Id
+ */
 public class LawEnforcementRequestService {
     private RequestParams params;
     private static Gson gson = new Gson();
 
+    /**
+     * <p>Constructor for LawEnforcementRequestService.</p>
+     *
+     * @param params a {@link io.warranted.RequestParams} object
+     */
     public LawEnforcementRequestService(RequestParams params) {
       this.params = params;
     }
 
     /**
      * Get up to 500 law enforcement requests
+     *
      * @return a list of law enforcement requests
-     * @throws Exception
+     * @throws java.lang.Exception
      */
     public List<LawEnforcementRequest> get() throws Exception {
       return this.get(0, 500);
@@ -40,9 +52,10 @@ public class LawEnforcementRequestService {
 
     /**
      * Get up to 500 law enforcement requests
+     *
      * @param startAt a non negative integer
      * @return a list of law enforcement requests
-     * @throws Exception
+     * @throws java.lang.Exception
      */
     public List<LawEnforcementRequest> get(int startAt) throws Exception {
       return this.get(startAt, 500);
@@ -50,10 +63,11 @@ public class LawEnforcementRequestService {
 
     /**
      * Get up to 500 law enforcement requests
+     *
      * @param startAt a non negative integer
      * @param limit an integer between 1 and 500 inclusive
-     * @return
-     * @throws Exception
+     * @throws java.lang.Exception
+     * @return a {@link java.util.List} object
      */
     public List<LawEnforcementRequest> get(int startAt, int limit) throws Exception {
       if (startAt < 0 || limit < 1 || limit > 500) {
@@ -97,9 +111,10 @@ public class LawEnforcementRequestService {
 
     /**
      * Get a law enforcement request
+     *
      * @param lawEnforcementRequestId the id of the law enforcement request
      * @return the corresponding lawEnforcementRequest object
-     * @throws Exception
+     * @throws java.lang.Exception
      */
     public LawEnforcementRequest get(String lawEnforcementRequestId) throws Exception {
       String url = String.format("%s/api/v1/lawEnforcementRequests/%s", this.params.getHost(), lawEnforcementRequestId);
@@ -138,6 +153,13 @@ public class LawEnforcementRequestService {
       return lawEnforcementRequestResponse.getLawEnforcementRequest();
     }
 
+    /**
+     * Upload a Law Enforcement Request
+     *
+     * @param file a {@link java.io.File} object
+     * @return a {@link io.warranted.LawEnforcementRequest} object
+     * @throws java.lang.Exception if any.
+     */
     public LawEnforcementRequest add(File file) throws Exception {
       String url = String.format("%s/api/v1/lawEnforcementRequest/new", this.params.getHost());
       URI uriObject = URI.create(url);
@@ -178,9 +200,10 @@ public class LawEnforcementRequestService {
 
     /**
      * Update a law enforcement request
+     *
      * @param lawEnforcementRequest the law enforcement request to update
      * @return the updated lawEnforcementRequest object
-     * @throws Exception
+     * @throws java.lang.Exception
      */
     public LawEnforcementRequest update(LawEnforcementRequest lawEnforcementRequest) throws Exception {
       String encodedId = URLEncoder.encode(lawEnforcementRequest.getId(), StandardCharsets.UTF_8.toString());
@@ -224,9 +247,10 @@ public class LawEnforcementRequestService {
 
     /**
      * Delete a law enforcement request
+     *
      * @param lawEnforcementRequestId the id of the law enforcement request
      * @return a DeleteResponse object
-     * @throws Exception
+     * @throws java.lang.Exception
      */
     public DeleteResponse delete(String lawEnforcementRequestId) throws Exception {
       String url = String.format("%s/api/v1/lawEnforcementRequests/%s", this.params.getHost(), lawEnforcementRequestId);
