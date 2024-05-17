@@ -9,7 +9,7 @@ package io.warranted;
 public class Me {
     private String id;
     private String role;
-  
+
     /**
      * <p>Getter for the field <code>id</code>.</p>
      *
